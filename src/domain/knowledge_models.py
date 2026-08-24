@@ -73,6 +73,8 @@ class CaseStatistics(ContractModel):
     active_cases: int = Field(ge=0)
     risk_tag_count: int = Field(ge=0)
     data_version: str | None = None
+    latest_crawl_at: str | None = None
+    latest_penalty_date: str | None = None
 
 
 class MatchedCase(ContractModel):

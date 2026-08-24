@@ -185,5 +185,7 @@
     "validation_json": "C:/Users/11051/Desktop/案例知识库_重建_2026-07-31/outputs/case_knowledge_base_v2_1/full/reports/validation_report.json",
     "validation_md": "C:/Users/11051/Desktop/案例知识库_重建_2026-07-31/outputs/case_knowledge_base_v2_1/full/reports/validation_report.md",
     "coverage_md": "C:/Users/11051/Desktop/案例知识库_重建_2026-07-31/outputs/case_knowledge_base_v2_1/full/reports/field_coverage_report.md"
-  }
+  },
+  "latest_crawl_at": "2026-08-22",
+  "latest_penalty_date": "2026-08-21"
 }

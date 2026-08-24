@@ -133,6 +133,8 @@ async def health(case_service: CaseDependency) -> dict[str, object]:
         "case_count": statistics.total_cases,
         "active_case_count": statistics.active_cases,
         "data_version": statistics.data_version,
+        "latest_crawl_at": statistics.latest_crawl_at,
+        "latest_penalty_date": statistics.latest_penalty_date,
         "llm_model": llm_client.model_name if llm_client else None,
     }
 

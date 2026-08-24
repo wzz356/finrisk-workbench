@@ -130,7 +130,9 @@ async function loadHealth() {
     const data = await api("/api/health");
     el("#health-state").classList.add("is-ready");
     const model = data.llm_model ? ` · ${data.llm_model}` : " · 规则降级模式";
-    el("#health-text").textContent = `${data.active_case_count.toLocaleString("zh-CN")} 条启用案例${model}`;
+    const crawl = data.latest_crawl_at ? ` · 最近采集 ${data.latest_crawl_at}` : "";
+    const penalty = data.latest_penalty_date ? ` · 最新处罚 ${data.latest_penalty_date}` : "";
+    el("#health-text").textContent = `${data.active_case_count.toLocaleString("zh-CN")} 条启用案例${model}${crawl}${penalty}`;
   } catch (error) {
     el("#health-state").classList.add("is-error");
     el("#health-text").textContent = "本地服务连接失败";

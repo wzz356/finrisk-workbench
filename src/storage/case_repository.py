@@ -46,6 +46,8 @@ class CaseRepository:
         self._chunks_by_case: dict[str, list[dict[str, object]]] = {}
         self._risk_tags: set[str] = set()
         self._data_version: str | None = None
+        self._latest_crawl_at: str | None = None
+        self._latest_penalty_date: str | None = None
         self._revision = 0
         self.reload()
 
@@ -72,7 +74,10 @@ class CaseRepository:
                 for tag in _as_list(record.get("risk_tags"))
                 if tag
             }
-            self._data_version = _read_manifest_version(self.settings.manifest_path)
+            manifest_meta = _read_manifest_meta(self.settings.manifest_path)
+            self._data_version = manifest_meta.get("data_version")
+            self._latest_crawl_at = manifest_meta.get("latest_crawl_at")
+            self._latest_penalty_date = manifest_meta.get("latest_penalty_date")
             self._revision += 1
 
     def list_cases(
@@ -132,6 +137,8 @@ class CaseRepository:
             active_cases=sum(1 for record in records if record.get("retrieval_status") == "active"),
             risk_tag_count=len(self._risk_tags),
             data_version=self._data_version,
+            latest_crawl_at=self._latest_crawl_at,
+            latest_penalty_date=self._latest_penalty_date,
         )
 
     def add_case(
@@ -383,11 +390,17 @@ def _write_jsonl_atomic(path: Path, records: Iterable[dict[str, object]]) -> Non
     os.replace(temporary, path)
 
 
-def _read_manifest_version(path: Path) -> str | None:
+def _read_manifest_meta(path: Path) -> dict[str, str]:
     if not path.is_file():
-        return None
+        return {}
     value = json.loads(path.read_text(encoding="utf-8"))
-    return str(value.get("data_version")) if isinstance(value, dict) else None
+    if not isinstance(value, dict):
+        return {}
+    return {
+        key: text
+        for key in ("data_version", "latest_crawl_at", "latest_penalty_date")
+        if (text := value.get(key)) not in (None, "")
+    }
 
 
 def _record_contains(record: dict[str, object], normalized_query: str) -> bool:
