@@ -1,5 +1,18 @@
 # 变更与验证日志
 
+## 2026-08-24：顶栏徽章显示案例库采集/处罚日期
+
+- manifest 新增 `latest_crawl_at` / `latest_penalty_date`（案例库侧
+  `scripts/stamp_kb_crawl_meta.py` 打戳：采集时间取自一键更新日志，
+  最新处罚日期为库内 penalty_date 最大值；只改 manifest 不动数据文件，
+  `_refresh_manifest` 保留式更新不会冲掉；已挂入自动重建链路）；
+- `/api/health` 与 `/api/cases/statistics` 透出两字段，旧版库缺失时为 null；
+- 顶栏徽章追加「最近采集 YYYY-MM-DD · 最新处罚 YYYY-MM-DD」分段，
+  字段缺失自动省略（兼容旧库）；
+- 验证：两接口返回 2026-08-22 / 2026-08-21；pytest 32 通过（另 2 项
+  query_api 失败为本机环境变量 DEEPSEEK_API_KEY 已设置所致， unset 后全过，
+  与本次改动无关）。
+
 ## 2026-08-24：案例库标题/当事人确定性清理（同目录覆盖 08-23 版）
 
 - 案例库 `case_kb_v2_1_2026-08-23` 同目录覆盖更新（仍 7,623 案，valid 全绿、
