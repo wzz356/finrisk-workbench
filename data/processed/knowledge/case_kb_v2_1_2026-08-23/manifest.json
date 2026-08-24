@@ -1,7 +1,7 @@
 {
   "schema_version": "case_kb_manifest_v1",
-  "data_version": "case_kb_v2_1_2026-08-23",
-  "created_at": "2026-08-23",
+  "data_version": "case_kb_v2_1_2026-08-24",
+  "created_at": "2026-08-24",
   "valid": true,
   "counts": {
     "cases": 7623,
@@ -86,20 +86,20 @@
   "files": {
     "case_chunks": {
       "path": "data/case_chunks.jsonl",
-      "bytes": 29222845,
-      "sha256": "461ab573ce9b8f1e0789c55b6168343fab7302e28efc3e8caff4cd25bac1dbde",
+      "bytes": 29212782,
+      "sha256": "416af6707026d25174c9ecb1d6287c896da71727f1868765f1df89f07103f876",
       "rows": 31026
     },
     "case_expansions": {
       "path": "data/case_expansions.jsonl",
       "bytes": 15791381,
-      "sha256": "e92a9f59cb7f4ebdb0e2f02fa78c5470c12001beff2bbb65bfac61cbbc70eb79",
+      "sha256": "d494effab71dae838d1aaae2b28ac073587a2de74d091b59953acaaae0b55b5f",
       "rows": 9429
     },
     "cases": {
       "path": "data/cases.jsonl",
-      "bytes": 53281901,
-      "sha256": "4f79f56c69f02bc2dc492ea67473e235fc205b49e51b78a9f1808547522b992a",
+      "bytes": 53243171,
+      "sha256": "07f2d809698079368dd08c9c043cec69a359d69cf62b2a4a0e1c9446869fdd94",
       "rows": 7623
     },
     "excluded_records": {
@@ -127,7 +127,7 @@
     "evidence_quotes_total": 1642,
     "evidence_quotes_located": 820,
     "field_values_backfilled": 1470,
-    "field_values_verbatim": 1360
+    "field_values_verbatim": 1357
   },
   "official_gold_protection_stats": {
     "expected_official_cases": 500,
