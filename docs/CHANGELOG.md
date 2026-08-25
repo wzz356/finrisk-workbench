@@ -1,5 +1,16 @@
 # 变更与验证日志
 
+## 2026-08-24：案例库每日自动更新（Windows 定时任务）
+
+- 案例库侧新增 `scripts/sync_kb_to_finrisk.py`：以 cases.sha256 比对检测变化，
+  有变化才把主库 full/ 覆盖同步到本目录并相对化 manifest；源 valid 不为真时
+  拒绝覆盖；
+- 案例库侧 `scripts/daily_auto_update.ps1` + Windows 任务计划
+  `CaseKB-DailyUpdate`：每天 08:00 自动 采集→入库→重建→打戳→同步本项目
+  （登录后运行，错过补跑，3 小时限额；日志在案例库项目 logs/ 下）；
+- 注意：同步只更新磁盘数据，运行中的服务仍持旧数据内存副本，
+  **重启服务后**健康接口与检索才反映新库；GitHub 推送仍手动。
+
 ## 2026-08-24：顶栏徽章显示案例库采集/处罚日期
 
 - manifest 新增 `latest_crawl_at` / `latest_penalty_date`（案例库侧
