@@ -1,5 +1,16 @@
 # 变更与验证日志
 
+## 2026-08-25：案例库升级 2026-08-25（每日自动更新首跑验证）
+
+- 定时任务真实触发全链验证通过：4115 栏目新增 13 文书，5 案保险相关入库
+  （摘要案落 review），正式版 **7,628 案**（+5），
+  `data_version=case_kb_v2_1_2026-08-25`，valid 全绿；
+  latest_crawl_at=2026-08-25、latest_penalty_date=2026-08-24；
+- 修复案例库侧打戳顺序：从重建函数内移到 update_log 追加之后
+  （否则 latest_crawl_at 读到上一次运行日期）；
+- 修复每日任务 ps1 编码：补 UTF-8 BOM（Windows PowerShell 5.1 对无 BOM
+  脚本按 ANSI 误读中文路径，导致 08-25 08:00 首次计划运行失败）。
+
 ## 2026-08-24：案例库每日自动更新（Windows 定时任务）
 
 - 案例库侧新增 `scripts/sync_kb_to_finrisk.py`：以 cases.sha256 比对检测变化，
