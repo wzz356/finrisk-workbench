@@ -103,7 +103,11 @@ class CaseRepository:
         if status:
             records = [record for record in records if record.get("retrieval_status") == status]
         if origin == "base":
-            records = [record for record in records if record.get("case_origin") != "web_ingestion"]
+            records = [
+                record
+                for record in records
+                if record.get("case_origin") not in ("web_ingestion", "web_crawl")
+            ]
         elif origin:
             records = [record for record in records if record.get("case_origin") == origin]
         records.sort(key=_case_sort_key)

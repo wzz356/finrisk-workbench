@@ -13,7 +13,8 @@
   "distributions": {
     "case_origin": {
       "official_gold": 500,
-      "raw_expansion": 7142
+      "raw_expansion": 6833,
+      "web_crawl": 309
     },
     "risk_tags": {
       "不当比较": 29,
@@ -98,8 +99,8 @@
     },
     "cases": {
       "path": "data/cases.jsonl",
-      "bytes": 53338832,
-      "sha256": "3efbb0ad0ead785b401c08b324c54e1bd6f19b9cee85de4da4e0d1841a40843e",
+      "bytes": 53337596,
+      "sha256": "167a39f87856dc37ade58163dec2b9ba9b3d295beaa6fe5657663da3d35787ae",
       "rows": 7642
     },
     "excluded_records": {

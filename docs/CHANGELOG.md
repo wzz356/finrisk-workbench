@@ -1,5 +1,19 @@
 # 变更与验证日志
 
+## 2026-08-26：案例来源三分（原批次/每日采集/Web 新增）
+
+- 案例库侧 origin 规则调整（用户批准）：U 开头官网采集增量从
+  `raw_expansion` 独立为 `web_crawl`（构建时按 case_id 前缀判定，
+  不改动 kb_increments 既存记录），重建后分布 official_gold 500 /
+  raw_expansion 6,833 / web_crawl 309，valid 全绿；
+- 本侧适配：来源筛选新增「每日采集」（origin=web_crawl 精确匹配）；
+  「原批次」（origin=base）调整为排除 web_ingestion 与 web_crawl 两者；
+  列表标签与详情「数据来源」按 case_origin 三分显示
+  （每日采集=官网每日自动采集）；统计卡口径不变（user_cases 仍只计
+  Web 上传）；
+- 验证：base 7,333 / web_crawl 309 / web_ingestion 0 / 全部 7,642；
+  pytest 34 通过；JS 语法检查通过。
+
 ## 2026-08-26：案例库来源筛选补"原批次"选项
 
 - 案例管理页来源筛选新增「原批次」选项（`origin=base` = 所有非

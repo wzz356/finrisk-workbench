@@ -343,7 +343,7 @@ function renderCaseList() {
         <div class="case-meta">
           <span>${escapeHtml(item.regulator || "监管机构未记录")}</span>
           <span>${formatDate(item.penalty_date)}</span>
-          <span class="origin-chip">${item.is_user_managed ? "Web 新增" : "原批次"}</span>
+          <span class="origin-chip">${originLabel(item.case_origin)}</span>
           <span class="status-chip ${escapeHtml(item.retrieval_status)}">${item.retrieval_status === "active" ? "启用" : "已停用"}</span>
         </div>
       </article>
@@ -415,7 +415,7 @@ function renderCaseDetail(item) {
       <div><dt>处罚文号</dt><dd>${escapeHtml(item.penalty_doc_no || "—")}</dd></div>
       <div><dt>处罚机关</dt><dd>${escapeHtml(item.regulator || "—")}</dd></div>
       <div><dt>处罚日期</dt><dd>${formatDate(item.penalty_date)}</dd></div>
-      <div><dt>数据来源</dt><dd>${item.is_user_managed ? "Web 增量录入" : "原批次构建"}</dd></div>
+      <div><dt>数据来源</dt><dd>${originDetailLabel(item.case_origin)}</dd></div>
       <div><dt>检索状态</dt><dd>${item.retrieval_status === "active" ? "启用" : "已停用"}</dd></div>
     </dl>
     <section class="detail-section"><h3>违法事实</h3><p>${escapeHtml(item.violation_behavior || "—")}</p></section>
@@ -514,6 +514,18 @@ function formatPercent(value) {
 
 function formatDate(value) {
   return value ? new Intl.DateTimeFormat("zh-CN").format(new Date(`${value}T00:00:00`)) : "—";
+}
+
+function originLabel(origin) {
+  if (origin === "web_ingestion") return "Web 新增";
+  if (origin === "web_crawl") return "每日采集";
+  return "原批次";
+}
+
+function originDetailLabel(origin) {
+  if (origin === "web_ingestion") return "Web 增量录入";
+  if (origin === "web_crawl") return "官网每日自动采集";
+  return "原批次构建";
 }
 
 function escapeHtml(value) {
