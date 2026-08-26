@@ -102,7 +102,9 @@ class CaseRepository:
             ]
         if status:
             records = [record for record in records if record.get("retrieval_status") == status]
-        if origin:
+        if origin == "base":
+            records = [record for record in records if record.get("case_origin") != "web_ingestion"]
+        elif origin:
             records = [record for record in records if record.get("case_origin") == origin]
         records.sort(key=_case_sort_key)
         total = len(records)

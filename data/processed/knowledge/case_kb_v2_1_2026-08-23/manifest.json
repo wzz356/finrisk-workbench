@@ -1,41 +1,41 @@
 {
   "schema_version": "case_kb_manifest_v1",
-  "data_version": "case_kb_v2_1_2026-08-25",
-  "created_at": "2026-08-25",
+  "data_version": "case_kb_v2_1_2026-08-26",
+  "created_at": "2026-08-26",
   "valid": true,
   "counts": {
-    "cases": 7628,
-    "chunks": 31041,
-    "expansions": 9439,
-    "review_queue": 1127,
+    "cases": 7642,
+    "chunks": 31083,
+    "expansions": 9464,
+    "review_queue": 1130,
     "excluded_records": 9
   },
   "distributions": {
     "case_origin": {
       "official_gold": 500,
-      "raw_expansion": 7128
+      "raw_expansion": 7142
     },
     "risk_tags": {
       "不当比较": 29,
       "产品说明会违规": 50,
       "代理人管理不到位": 292,
       "保证收益": 6,
-      "其他": 3390,
-      "合同外利益": 563,
-      "回扣返佣": 121,
+      "其他": 3397,
+      "合同外利益": 566,
+      "回扣返佣": 122,
       "回访违规": 105,
       "培训材料违规": 62,
       "夸大收益": 45,
-      "委托无资质机构销售": 235,
+      "委托无资质机构销售": 237,
       "客户信息不真实": 92,
       "弱化风险提示": 1,
       "承诺收益": 23,
-      "未按规定使用费率条款": 713,
-      "欺骗投保人": 346,
+      "未按规定使用费率条款": 715,
+      "欺骗投保人": 347,
       "电销违规": 56,
       "绝对化表述": 2,
       "虚假宣传": 121,
-      "虚列费用套取资金": 1788,
+      "虚列费用套取资金": 1789,
       "虚构收益率": 7,
       "诱导投保": 37,
       "赠送利益": 48,
@@ -45,26 +45,26 @@
     },
     "chunk_type": {
       "evidence": 223,
-      "fact": 7628,
+      "fact": 7642,
       "legal_basis": 11375,
-      "party": 4535,
-      "penalty": 7280
+      "party": 4549,
+      "penalty": 7294
     },
     "expansion_type": {
       "behavior_alias": 185,
       "marketing_expression": 93,
       "official_train_query": 300,
-      "synthetic_query": 8861
+      "synthetic_query": 8886
     },
     "allowed_usage": {
-      "retrieval": 9439
+      "retrieval": 9464
     },
     "retrieval_status": {
-      "active": 7628
+      "active": 7642
     },
     "evidence_status": {
       "limited": 7,
-      "verified": 7621
+      "verified": 7635
     }
   },
   "data_use_restrictions": {
@@ -86,21 +86,21 @@
   "files": {
     "case_chunks": {
       "path": "data/case_chunks.jsonl",
-      "bytes": 29224171,
-      "sha256": "2048d43b6ce3848fafa4ec8cf53aef3ca3db3908cd53113dc85f4dd7a9ed1771",
-      "rows": 31041
+      "bytes": 29257341,
+      "sha256": "0846f09c531b9f5a799416dd3eb3d08f28135ee40660ec8cdaa6c133565094f8",
+      "rows": 31083
     },
     "case_expansions": {
       "path": "data/case_expansions.jsonl",
-      "bytes": 15803770,
-      "sha256": "93d746ee631edde7be03a003af4335beed7e0caa886b550ec7db53211596cd3d",
-      "rows": 9439
+      "bytes": 15835103,
+      "sha256": "695aa08557df7465df78be22472a776fae0fece24a4d505075bc894e6ef8ffe2",
+      "rows": 9464
     },
     "cases": {
       "path": "data/cases.jsonl",
-      "bytes": 53267270,
-      "sha256": "9d9b0f70361eac99a8e333dad62dc391b32f2977caf10e575823223067885160",
-      "rows": 7628
+      "bytes": 53338832,
+      "sha256": "3efbb0ad0ead785b401c08b324c54e1bd6f19b9cee85de4da4e0d1841a40843e",
+      "rows": 7642
     },
     "excluded_records": {
       "path": "data/excluded_records.jsonl",
@@ -110,9 +110,9 @@
     },
     "review_queue": {
       "path": "data/review_queue.jsonl",
-      "bytes": 285446,
-      "sha256": "819a87e446d7dc4f5644cb8e15191b75c147c1c213968b3ab7cacc6e258cd96e",
-      "rows": 1127
+      "bytes": 286126,
+      "sha256": "7e2b027136b48ac974a2dfceeb0737e2c0f3434bc430acf1a8976b35a25347e3",
+      "rows": 1130
     }
   },
   "gold_backfill_stats": {
@@ -147,10 +147,10 @@
     "revalidation_errors": {}
   },
   "official_calibration_stats": {
-    "eligible": 1997,
+    "eligible": 1999,
     "calibrated": 1125,
     "skipped_no_raw_text": 0,
-    "revalidation_failed": 872,
+    "revalidation_failed": 874,
     "revalidation_errors": {
       "label_specific_evidence_insufficient": 569,
       "other_cannot_mix_with_specific_label": 203,
@@ -167,12 +167,12 @@
       "label_evidence_explanation_required": 4,
       "classification_reason_required": 4,
       "invalid_classification_confidence": 4,
-      "parse_status_not_ok": 26
+      "parse_status_not_ok": 28
     }
   },
   "summary_rescue_stats": {
-    "eligible": 188,
-    "rescued": 158,
+    "eligible": 194,
+    "rescued": 164,
     "skipped_no_raw_text": 0,
     "skipped_not_summary_source": 24,
     "no_label_after_fix": 0,
@@ -186,6 +186,6 @@
     "validation_md": "C:/Users/11051/Desktop/案例知识库_重建_2026-07-31/outputs/case_knowledge_base_v2_1/full/reports/validation_report.md",
     "coverage_md": "C:/Users/11051/Desktop/案例知识库_重建_2026-07-31/outputs/case_knowledge_base_v2_1/full/reports/field_coverage_report.md"
   },
-  "latest_crawl_at": "2026-08-25",
-  "latest_penalty_date": "2026-08-24"
+  "latest_crawl_at": "2026-08-26",
+  "latest_penalty_date": "2026-08-25"
 }

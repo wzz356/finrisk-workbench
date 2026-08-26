@@ -3096,10 +3096,10 @@
     "missing_party_name:U000397"
   ],
   "counts": {
-    "cases": 7628,
-    "chunks": 31041,
-    "expansions": 9439,
-    "review_queue": 1127,
+    "cases": 7642,
+    "chunks": 31083,
+    "expansions": 9464,
+    "review_queue": 1130,
     "excluded_records": 9
   },
   "metrics": {
