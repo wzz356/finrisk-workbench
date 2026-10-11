@@ -1,0 +1,387 @@
+{
+  "review_group": 3,
+  "review_date": "2026-10-11",
+  "scope": "仅指定10份全文与候选cases/behaviors的独立语义审计；不重复coverage，不读取盲验，不调用外部API，不修改生产候选或账本。",
+  "policy": "官方27类及recall-v2；宽召回可inferred但不补事实。",
+  "grading_note": "重大为主体/金额/事实错误；中等为遗漏、引用支持范围或结构化检索质量；无因子表示未评估，不能当作事实否定。",
+  "summary": {
+    "无问题": 2,
+    "中等": 8
+  },
+  "total_documents": 10,
+  "non_coverage_quotes_checked": 366,
+  "missing_quotes": 0,
+  "source_hashes_match": true,
+  "results": [
+    {
+      "file_id": "F009276",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b008\\p3\\F009276_r0.json",
+      "candidate_sha256": "556e90d1fd6cd29daf2bc50d0edb455c90666e63aee4765a179b30bf3be52efa",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "无问题",
+      "semantic_checks": "机构虚列劳务费与邓仲扬管理责任分开，罚13万元与1.3万元、警告和2023-06-09准确。虚列费用套取资金为inferred，明确未载套资、管理责任非亲自实施，符合宽召回。ST6与FD-P01准确。",
+      "findings": [],
+      "quote_check": {
+        "checked": 37,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F002882",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b030\\p3\\F002882_r0.json",
+      "candidate_sha256": "5eef0e6f1e9845cc7d3d514a27efb851a8e11a099b370d80492b601c62c8a730",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "机构5万+10万分别保留；陈和仅警告，直接责任未写成实施。三主案由和个人责任记录均在，条款费率标签准确。虚假理赔没有硬贴客户误导；ST6准确。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "behaviors[yongan_mortgage]",
+            "behaviors[chen_mortgage]"
+          ],
+          "source_evidence": [
+            "2004年至2007年你中心支公司存在虚假批退房贷险保费行为,当房贷险保单发生真实退保时,由于你中心支公司之前违规批退正常房贷险保单保费用于支付手续费而致无法通过业务系统将全额保费退至投保\n人,因此你中心支公司只能通过虚列办公费用套取资金垫付房贷险退保差额。"
+          ],
+          "candidate_value": "虚假批退正常房贷险保费支付手续费、后续虚列办公费垫付差额合为一条机构行为；个人责任同样合并。",
+          "impact": "独立的虚假批退行为只作为套费链条前因，无法按独立行为检索虚假退保及其支付用途。",
+          "suggested_fix": "机构至少分别保存虚假批退正常保单保费和虚列办公费用套取资金两条；以引用保留先后关系。个人可保留总括责任，但明确对应事项，不补亲自实施。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[yongan].behavior_period",
+            "behaviors[*].product_type",
+            "behaviors[*].conditions"
+          ],
+          "source_evidence": [
+            "经查,2007年12月至2009年12月,你中心支公司存在以下违法行为:\n",
+            "你中心支公司对交强险和商业险业务,通过增设公共保额的形式,对第三者责任保险赔偿限额给予扩展,并增设对受害人的精神赔偿责任。\n",
+            "2004年至2007年你中心支公司存在虚假批退房贷险保费行为,当房贷险保单发生真实退保时,由于你中心支公司之前违规批退正常房贷险保单保费用于支付手续费而致无法通过业务系统将全额保费退至投保\n人,因此你中心支公司只能通过虚列办公费用套取资金垫付房贷险退保差额。",
+            "你中心支公司2008年3月10日结案的一赔案为你中心支公司通过非真实发生的赔案支付该车辆的日常维修保养费用。\n"
+          ],
+          "candidate_value": "behavior_period、product_type均null，conditions均空。",
+          "impact": "交强险/商业险、房贷险以及2004—2007、2007-12—2009-12、赔案结案日等限定仅散落摘要，结构化产品和时序检索损失。",
+          "suggested_fix": "按各行为保存产品及原时间限定；总览期间与分项历史期间同时保留，不强行合并或把结案日改成全部行为起止。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[*].legal_refs"
+          ],
+          "source_evidence": [
+            "上述第(一)项违法行为违反了《中华人民共和国保险法》(2002年修正,下同)第一百零七条第一款的规定,依据《中华人民共和国保险法》第一百四十五条第(八)项的规定,我局决定责令你中心支公司改正,并给\n予你中心支公司罚款5万元的行政处罚。",
+            "上述第(二)、(三)项违法行为违反了《中华人民共和国保险法》第一百二十二条的规定。依据《中华人民共和国保险法》第一百四十七条第(一)项的规定,我局决定责令你中心支公司改正,并给予你中心支公司\n罚款10万元的行政处罚。",
+            "根据永安财产保险股份有限公司广东分公司《关于陈和等同志职务聘任的通知》(永保粤人[2004]23号)和你中心支公司《关于领导班子分工的通知》(永珠保发[2008]7号),陈和2004年8月至今任你中心支公\n司总经理,主持全面工作,对上述违法行为负有直接责任,依据《中华人民共和国保险法》第一百五十条规定,我局决定给予陈和警告的行政处罚。"
+          ],
+          "candidate_value": "两个case的legal_refs均空。",
+          "impact": "丢失机构各事项所引历史法条及个人150条，按法律依据检索无法命中。",
+          "suggested_fix": "照抄机构107/145(八)、122/147(一)及个人150条并分别绑定引用；不补现行效力。"
+        }
+      ],
+      "quote_check": {
+        "checked": 67,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F006005",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b002\\p3\\F006005_r0.json",
+      "candidate_sha256": "e8c210393235f27635724237ee99fe50000628450af78285df7b73fda1aacf14",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "无问题",
+      "semantic_checks": "管理不善导致许可证遗失为单独机构行为；责令改正、警告、罚1万元和2024-07-01准确。许可证遗失不能推定无资质展业，其他标签合理。法规15、18条有引用；ST6合理。",
+      "findings": [],
+      "quote_check": {
+        "checked": 20,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F003391",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b001\\p3\\F003391_r0_fix04.json",
+      "candidate_sha256": "e85a596a5edac9b273caf55ccfe67fd27749dd69e37d673054c049a3510da132",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "仅受罚机构建case，关联服务部及陈国业没有制造受罚个人。335份空白单、165份已打印限定在conditions；无资质代理标签explicit有原文，2008年8月及2009-01-07准确。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[institution_huatai_jiangmen].penalties"
+          ],
+          "source_evidence": [
+            "我局责令你中心支公司改正,并决定给予你中心支公司警告的行政处罚。\n"
+          ],
+          "candidate_value": "penalties只有警告；摘要有责令改正。",
+          "impact": "结构化处罚遗漏责令改正，按处罚措施筛选结果不完整。",
+          "suggested_fix": "单列责令改正，保持无金额，不虚构罚款。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[institution_huatai_jiangmen].legal_refs[0]"
+          ],
+          "source_evidence": [
+            "依据《保险公司管理规定》第九十九条“保险机构或者其工作人员违反本规定,由中国保监会给予警告,责令改正,并根据有关法律、行政法规给予行政处罚;涉嫌犯罪的,依法移交司法机关追究其刑事责任”的规\n定,我局责令你中心支公司改正,并决定给予你中心支公司警告的行政处罚。"
+          ],
+          "candidate_value": {
+            "value": "《保险公司管理规定》第五十六条、第九十九条",
+            "quote": "该行为违反了《保险公司管理规定》第五十六条"
+          },
+          "impact": "quote只证明56条，未证明value里的99条；引文形式合法但支持范围不完整。",
+          "suggested_fix": "分开保存56条和99条，分别引用各条连续原文。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "behaviors[unqualified_agent_sales].product_type"
+          ],
+          "source_evidence": [
+            "你中心支公司员工陈国业将335份摩托车险空白保\n单交由新立机动车服务部代理出单并收取保费,其中165份已在新立机动车服务部打印出单。"
+          ],
+          "candidate_value": "product_type=null，product_quote=null。",
+          "impact": "原文明示摩托车险，结构化产品检索漏召回。",
+          "suggested_fix": "填摩托车险并引用原文；无需创造额外营销材料或渠道。"
+        }
+      ],
+      "quote_check": {
+        "checked": 20,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F004452",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b015\\p3\\F004452_r0.json",
+      "candidate_sha256": "963be27edd3668d2c0717be8c812d47e03ad57ea713333381bcf170694722bcf",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "三受罚主体分开，李诗杨仅负责虚假文件、张志刚仅负责套费及未登记个人代理，6条行为/责任映射准确。44万、6.5万、3万及2025-07-11准确。个人文号留未知；套费inferred局限准确、个人代理管理标签合理，ST6与FD-P01准确。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[*].legal_refs"
+          ],
+          "source_evidence": [
+            "《中华人民共\n和国保险法》\n第八十六条、\n第一百七十\n条、第一百一\n十六条、第一\n百六十一条、\n《保险代理人\n监管规定》第\n六十六条、第\n九十四条\n",
+            "对华泰财产保险\n有限公司吕梁中\n心支公司编制虚\n假的文件资料的\n违法违规行为负\n有责任\n《中华人民共\n和国保险法》\n第八十六条、\n第一百七十一\n条\n",
+            "对华泰财产保险\n有限公司吕梁中\n心支公司以虚构\n保险中介业务方\n式套取费用、委\n托未通过该机构\n执业登记的个人\n代理保险代理业\n务的违法违规行\n为负有责任\n《中华人民共\n和国保险法》\n第一百一十六\n条、第一百七\n十一条、《保\n险代理人监管\n规定》第六十\n六条、第九十\n四条\n"
+          ],
+          "candidate_value": "全部legal_refs=[]。",
+          "impact": "已列明的各主体法律依据被丢到非结构化原文中，无法按个人和机构适用法条检索。",
+          "suggested_fix": "按各表行照抄法规条文及原换行引用，主体分别绑定，不扩张个人责任。"
+        }
+      ],
+      "quote_check": {
+        "checked": 77,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F000800",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b016\\p3\\F000800_r0.json",
+      "candidate_sha256": "2d1eb3356b5c3b3f1ad6fd31e63f9559f6034eef4be4b936c2aefdb409d83d10",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "三家保险公司工作人员资金链分别记录，业务额、发票额、自留额、返还额均准确；未将业务资金错当罚款，机构罚5万元准确。虚列费用候选inferred说明非原文完整表述及收款人非投保人，符合宽召回；未乱贴回扣返佣。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[zhongtian].behavior_period",
+            "behaviors[*].conditions"
+          ],
+          "source_evidence": [
+            "经查,2015年1月至12月,你公司存在利用业务便利为其他机构或个人谋取不正当利益的违法行为:\n"
+          ],
+          "candidate_value": "behavior_period=null，conditions=[]。",
+          "impact": "机构2015年1月至12月的明确期间只写成摘要2015年，结构化时序范围丢失。",
+          "suggested_fix": "保存2015年1月至12月及原文引用；不改成处罚日期。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[zhongtian].legal_refs"
+          ],
+          "source_evidence": [
+            "上述行为违反了《中华人民共和国保险法》(2015年修订,以下简称《保险法》)第一百三十一条第八项的规定。依据《保险法》第一百六十五条的规定,我局决定给予你公司罚款五万元的行政处罚。"
+          ],
+          "candidate_value": "legal_refs=[]。",
+          "impact": "131条八项和165条未进入法律检索字段。",
+          "suggested_fix": "保留原文2015修订版本的所引131条八项和165条，逐条回源。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "behaviors[*].factor_values"
+          ],
+          "source_evidence": [
+            "一是虚构保险代理业务34.94万元,虚开保险中介业务发票6.31万元,自留1.21万元,向中国太平洋财产保险股份有限公司乌鲁木齐中心支公司工作人员返还5.1万元。\n",
+            "二是虚构保险代理业务112万元,虚开保险中介业务发票5.6万元,自留0.84万元,向中国人民财产保险股份有限公司新疆维吾尔自治区分公司营业部工作人员返还4.76万元。\n",
+            "三是虚构保险代理业务18.54万元,虚开保险中介业务发票4.46万元,自留1.04万元,向中华联合财产保险股份有限公司乌鲁木齐分公司工作人员返还3.42万元。    \n"
+          ],
+          "candidate_value": "三条factor_values均空；金额和路径只在summary/risk_mechanism。",
+          "impact": "经济事项真实性、发票、自留及实际返还对象是本案主要可检索机制，相关费用因子未评估会使按资金路径/接受角色的因子检索缺项。",
+          "suggested_fix": "按已有原文选填FD-F01、FD-F04、FD-F07及金额限定；各条分别保存业务/发票/自留/返还金额，不从汇总额补单笔。空因子不是错误事实，但属检索质量缺口。"
+        }
+      ],
+      "quote_check": {
+        "checked": 34,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F004480",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b010\\p3\\F004480_r0.json",
+      "candidate_sha256": "c45ad82a128836fa64fb6a6de0eab27fc08dc5653e99ac27872337ee36ecdbb4",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "四个主体、机构10万/24万、个人1万/8万及警告归属正确；日期保持未知。个人事项未知，actor_role=unknown及inferred/document_related局限正确。两机构其他标签合理；ST6未推出业务营销场景。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[you_shidong].penalty_doc_no",
+            "cases[jin_xuedui].penalty_doc_no"
+          ],
+          "source_evidence": [
+            "1\n渤海财产保险\n股份有限公司\n温州中心支公\n司\n温金罚决字\n〔2025〕7号\n编制虚假的报\n告、报表、文\n件、资料\n罚款10万\n元\n温州金融\n监管分局\n2\n游世栋(时任\n渤海财产保险\n股份有限公司\n温州中心支公\n司副总经理兼\n瑞安支公司经\n理)\n警告,并处\n罚款1万元\n3\n",
+            "3\n中国人民财产\n保险股份有限\n公司瑞安支公\n司\n温金罚决字\n〔2025〕8号\n利用保险业务\n为他人牟取不\n正当利益\n罚款24万\n元\n4\n金雪对(时任\n中国人民财产\n保险股份有限\n公司瑞安支公\n司总经理)\n警告,并处\n罚款8万元\n手机扫一扫打开此页"
+          ],
+          "candidate_value": {
+            "游世栋": "温金罚决字〔2025〕7号",
+            "金雪对": "温金罚决字〔2025〕8号"
+          },
+          "impact": "线性文本个人行没有独立文号，现候选直接继承机构号；表格合并单元格是否覆盖个人未经证实。这是未核实文号归属，不能据文本认定文号确定错误。",
+          "suggested_fix": "按契约先将两个人文号留null+unknown；只有检查源表格确认共享范围后才填入。保留document_related标签及未知角色。"
+        }
+      ],
+      "quote_check": {
+        "checked": 65,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F002330",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b013\\p3\\F002330_r0.json",
+      "candidate_sha256": "00e53b8525f2e550602deff49b956149118dbe6aa814b494f19511f32f9a2dd7",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "2010年度财务数据不真实没有补虚列费用套资、具体差旅费虚构或客户信息不真实；其他合理。罚10万元、责改及2011-11-25准确；ST6合理。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[yongan].behavior_period",
+            "behaviors[yongan_finance].conditions",
+            "cases[yongan].legal_refs"
+          ],
+          "source_evidence": [
+            "经查,你公司2010年度存在财务数据不真实的违法违规行为。上述违法违规行为,有现场检查事实确认书、现场检查调查笔录、记账凭证、差旅费明细表等在案作证。\n",
+            "我局认为,上述违法违规行为违反了《保险法》第八十六条之规定,依据《保险法》第一百七十二条之规定,我局决定对你公司做出以下行政处罚:\n"
+          ],
+          "candidate_value": "behavior_period=null、conditions=[]、legal_refs=[]。",
+          "impact": "2010年度与历史86/172条没有进入对应结构化字段，按年份及法条检索不足。",
+          "suggested_fix": "保存2010年度原文期间，抄86条与172条；引用记账凭证、差旅费明细表只是证据，不能改成虚列差旅费事实。"
+        }
+      ],
+      "quote_check": {
+        "checked": 17,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F001443",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b024\\p3\\F001443_r0.json",
+      "candidate_sha256": "29419f1205be6a61d2981ec05f7e834c37d25758ef4369326cab6310c7fd5cfa",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "唯一机构未出示客户告知书行为与责令改正、警告、5000元一致；2014-01-29属结果公布落款，决定日期留null有说明合理。未补客户具体被隐瞒的合同信息，其他标签可接受；ST6合理。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[sanhe].legal_refs"
+          ],
+          "source_evidence": [
+            "    上述行为违反了《保险专业代理机构监管规定》第三十七条的规定,根据《保险专业代理机构监管规定》第八十一条的规定,我局责令你公司改正,决定给予你公司警告,处五千元罚款的行政处罚。"
+          ],
+          "candidate_value": "legal_refs=[]。",
+          "impact": "已明确的《保险专业代理机构监管规定》37、81条缺失，法条检索损失。",
+          "suggested_fix": "照抄第三十七条及第八十一条并绑定原文；不改写日期未知。"
+        }
+      ],
+      "quote_check": {
+        "checked": 16,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    },
+    {
+      "file_id": "F002948",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b045\\p3\\F002948_r0.json",
+      "candidate_sha256": "00fecc63b879fce4f0fe514703da2832402faeb686e12155ce85a42821f3bbcd",
+      "full_text_read": true,
+      "cases_and_behaviors_read": true,
+      "severity": "中等",
+      "semantic_checks": "单机构车险招投标未按规定使用条例/费率行为准确，保留原文条例用字；罚5万元及2010-05-26准确。费率条款标签explicit合理，ST6只指处罚载体。",
+      "findings": [
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "behaviors[yongcheng_rate].product_type",
+            "cases[yongcheng].legal_refs"
+          ],
+          "source_evidence": [
+            "在参加车辆保险招投标业务过程中,存在未按照规定使用经保险监督管理机构批准或者备案的保险条例、保险费率的行为。\n",
+            "上述行为违反了《保险法》第一百一十六条、第一百三十六条之规定,根据《保险法》第一百六十二条、第一百七十二条,我局决定对你分公司给予罚款五万元的行政处罚。"
+          ],
+          "candidate_value": "product_type=null，legal_refs=[]。",
+          "impact": "车辆保险产品限定和116/136/162/172条未进入结构化检索字段。",
+          "suggested_fix": "保存车辆保险产品及原文用词；照抄所引116、136、162、172条，历史效力不外推。"
+        },
+        {
+          "severity": "中等",
+          "candidate_fields": [
+            "cases[yongcheng].regulator",
+            "cases[yongcheng].unknowns"
+          ],
+          "source_evidence": [
+            "账户名称:中国保险监督管理委员会湖北监管局\n"
+          ],
+          "candidate_value": {
+            "regulator": null,
+            "unknowns": [
+              "文号、决定机关全称未载；原文保险条例不擅改。"
+            ]
+          },
+          "impact": "虽处罚署名只见我局，但全文确有监管局全称账户；“全称未载”把全文存在的机关名称误记为缺失，与同组F002882/F002330从账户识别机关的处理不一致。",
+          "suggested_fix": "记录原文出现机关全称及账户引用；如不据收款账户直接认定决定机关，unknown应写“账户载此机关，决定机关身份需核实”，不可称全称未载。"
+        }
+      ],
+      "quote_check": {
+        "checked": 13,
+        "non_contiguous_or_missing": []
+      },
+      "candidate_sha_matches_manifest": true
+    }
+  ]
+}

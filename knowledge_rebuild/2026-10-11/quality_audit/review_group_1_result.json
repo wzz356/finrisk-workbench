@@ -1,0 +1,365 @@
+{
+  "group": "review_group_1",
+  "review_type": "暂停后只读语义抽检",
+  "scope": "仅清单10份最新候选及对应full_text；未读盲验、未调用API/网络、未改候选或正式账本。",
+  "label_policy": "recall-v2 + official_27_unchanged",
+  "summary": {
+    "documents": 10,
+    "severity_counts": {
+      "无问题": 3,
+      "轻微": 5,
+      "中等": 2
+    },
+    "quotes_checked": 440,
+    "invalid_quotes": 0
+  },
+  "reviews": [
+    {
+      "file_id": "F006083",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b030\\p1\\F006083_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F006083.json",
+      "candidate_sha256": "63bdae975e05bb8b5828cc9c6f46f8e0268d7bf8d04e61c53aa2fcd955c0e4fa",
+      "severity": "无问题",
+      "issues": [],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 2,
+        "subject_responsibility_penalty_review": "黄健明确仅负责任，销售误导和财务不真实两项分别保存；警告和2万元罚款正确。财务类inferred并声明未明示套资机制，符合宽召回。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 26,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F008654",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b021\\p1\\F008654_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008654.json",
+      "candidate_sha256": "7e48713760a1714a60ed09954f7fc8ae59db142ad5ea07c8009c19a94be9f6e4",
+      "severity": "轻微",
+      "issues": [
+        {
+          "severity": "轻微",
+          "title": "机构名称明确的中心支公司层级未保存",
+          "field": "cases[company].institution_hierarchy",
+          "source_evidence": "一、中国人寿财产保险股份有限公司河\n池市中心支公司\n",
+          "generated_value": {
+            "level": null,
+            "basis_quote": null,
+            "geographic_level": null,
+            "missing_reason": "地域行政级别未由名称推断。"
+          },
+          "impact": "机构层级过滤会漏检；主体名称仍准确，未造成受罚主体错误。",
+          "suggested_fix": "level保存“中心支公司”，basis_quote用该机构名称连续原文；geographic_level继续null，不能将组织层级和地域行政级别混为一谈。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 4,
+        "behavior_count": 8,
+        "subject_responsibility_penalty_review": "四受罚主体及19万/2万/1万/1万分别准确，公司责令改正、个人警告分开；两公司案由拆分，三个人只以unknown、inferred/document_related关联，没有把同表事项断言为个人实施。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 92,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F008730",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b030\\p1\\F008730_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008730.json",
+      "candidate_sha256": "4a3d9f5e5900891b4eac210d027e96285963a6dae1ec7abd5f6c7ae26f9ea6e0",
+      "severity": "无问题",
+      "issues": [],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 1,
+        "subject_responsibility_penalty_review": "唯一受罚机构正确，徐宝库仅主要负责人未造受罚案；未如实编制承保档案独立保存，40万元和2023-01-31正确。仅机构名含农业不补农险业务，以其他召回可接受。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 16,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F004829",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b021\\p1\\F004829_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F004829.json",
+      "candidate_sha256": "35807d2a115714d6b88a6b40b84a8fbe673029c422369f56694471a06fdeede9",
+      "severity": "轻微",
+      "issues": [
+        {
+          "severity": "轻微",
+          "title": "机构名称明确的中心支公司层级未保存",
+          "field": "cases[company].institution_hierarchy",
+          "source_evidence": "阳光人寿保险\n股份有限公司\n烟台中心支公\n司\n",
+          "generated_value": {
+            "level": null,
+            "basis_quote": null,
+            "geographic_level": null,
+            "missing_reason": "地域行政级别未由名称推断。"
+          },
+          "impact": "机构层级过滤会漏检；主体名称仍准确，未造成受罚主体错误。",
+          "suggested_fix": "level保存“中心支公司”，basis_quote用该机构名称连续原文；geographic_level继续null，不能将组织层级和地域行政级别混为一谈。"
+        },
+        {
+          "severity": "轻微",
+          "title": "徐阳案未知说明夹入孙帅的岗位说明",
+          "field": "cases[xu].unknowns",
+          "source_evidence": "孙帅\n(时任阳光人寿\n保险股份有限\n公司海阳支公\n司经理(牵头负\n责烟台中支营\n销与培训部工\n作))\n",
+          "generated_value": "岗位未作实施责任证据；孙帅海阳支公司经理兼牵头烟台营销培训工作不补培训课件。",
+          "impact": "阅读单独个人案例时容易混淆哪些背景属于该个人；cases主体和罚款未错绑。",
+          "suggested_fix": "徐阳案只保留本人事项和日期缺失；孙帅兼任说明仅置于孙帅案例。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 3,
+        "behavior_count": 3,
+        "subject_responsibility_penalty_review": "公司、徐阳、孙帅分别对应1/2/3号和各5000元；未载决定日期保持null。个人案由单元格空缺时保留unknown和同文关联，未因营销培训岗位扩造培训材料。唆使诱导代理人类归代理人管理候选有合理关联。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 54,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F008816",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b017\\p1\\F008816_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008816.json",
+      "candidate_sha256": "0f9163722042e893823f90d4097bf46602f72650bd49ab92dcd7e5fe1d40bf19",
+      "severity": "轻微",
+      "issues": [
+        {
+          "severity": "轻微",
+          "title": "同一培训管理问题与其具体缺陷分作两条，存在重复计数风险",
+          "field": "behaviors[training_management,training_content]",
+          "source_evidence": "个人保险代理人培训管理不到位,培\n训内容不全面,缺少对法律知识及职\n业道德等的学习;个人保险代理人档\n案管理不到位;个人保险代理人给予\n投保人保险合同约定以外的利益\n",
+          "generated_value": [
+            "个人保险代理人培训管理不到位。",
+            "培训内容不全面缺少法律知识及职业道德等学习。"
+          ],
+          "impact": "原文逗号连接管理不足及内容缺失，后者是前者的具体内容；按独立违规条数统计或排序会重复加权。未漏档案管理或合同外利益事项。",
+          "suggested_fix": "合并培训管理与内容缺陷为一条，保留代理人管理不到位explicit主标签、培训材料违规inferred关联标签；或显式记录二者父子关系并在检索/计数中去重。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 4,
+        "subject_responsibility_penalty_review": "单一机构警告及1万元、2023-08-04正确；档案管理与代理人给合同外利益保留，未造未具名代理人受罚案例。机构案下末项summary/action明确实施者为代理人，并在unknowns/risk reason排除机构亲自给付。培训ST5仅source_context_only，材料fact_description；培训材料标签inferred并说明未获课件可接受。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 41,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F003209",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b004\\p1\\F003209_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F003209.json",
+      "candidate_sha256": "688981439182e040de9d01675925c0dcf75d004097251c92dd96bacdd817f689",
+      "severity": "轻微",
+      "issues": [
+        {
+          "severity": "轻微",
+          "title": "明确交强险和商业车险事项未写产品字段",
+          "field": "behaviors[missing_month].product_type",
+          "source_evidence": "经查,你分公司2008年7月18日参与佛山市南海区公安分局委托南海区政府采购中心对其所有的机动车保险项目招标,存在以下行为:\n  一是对其中35辆汽车的交强险按超过一年或短于一年的保险期限报价。二是对其中的19单交强险和商业车险少算一个月保费共计2214.26元(交强险少算1197.6元,商业车险少算保费1016.66元)。你分公司上\n述行为违反了《中华人民共和国保险法》第一百零七条第一款的规定,根据《中华人民共和国保险法》第一百四十五条第(八)项的规定,我局决定给予你分公司罚款5万元的行政处罚。\n",
+          "generated_value": null,
+          "impact": "summary/object和数量因子已保留两种保险，文本检索仍可用；仅产品字段过滤会漏掉该行为。",
+          "suggested_fix": "product_type记录“交强险及商业车险”，product_quote取明确两者的连续原文；不推断其他车险。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 2,
+        "subject_responsibility_penalty_review": "35辆交强险非一年报价与19单少算一个月保费拆开；2214.26=1197.6+1016.66与5万元罚款分离。2008-07-18行为与2009-08-19决定区分；采购方未造受罚主体。费率条款explicit具有明确行为/规范对应，不要求标签逐字出现。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 37,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F005369",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b003\\p1\\F005369_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F005369.json",
+      "candidate_sha256": "c85320048f27d88d5aa505971f25200569ef2d01e8a24936bd9a25553a78d577",
+      "severity": "中等",
+      "issues": [
+        {
+          "severity": "中等",
+          "title": "纯个人文书的动作对象因子错误套用机构关联模板",
+          "field": "behaviors[deception_related].factor_values[FD-C05]",
+          "source_evidence": "欺骗保险人、投保人、被保险\n人或者受益人\n",
+          "generated_value": "同文书机构案由",
+          "impact": "全文唯一受罚主体是王君风；所属新华人寿是身份背景，并无同文受罚机构案由。结构化因子错误描述来源/对象，影响主体关联和动作对象检索。",
+          "suggested_fix": "FD-C05保存原文“保险人、投保人、被保险人或者受益人”；如不能确认具体对象则null并说明宽案由未分别限定。保留actor_role=unknown和标签inferred/document_related，不补亲自实施。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 1,
+        "subject_responsibility_penalty_review": "王君风唯一受罚个人，警告及2万元、2024-10-14正确；宽泛欺骗案由未补欺骗机制；unknown和inferred/document_related为保守处理可接受，问题在FD-C05模板事实。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 20,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F006390",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b022\\p1\\F006390_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F006390.json",
+      "candidate_sha256": "6c113f6895c77072075d647e76dad7ee4ac15d533a02f6e1a0aa4b6933a6e1c7",
+      "severity": "轻微",
+      "issues": [
+        {
+          "severity": "轻微",
+          "title": "机构名称明确的中心支公司层级未保存",
+          "field": "cases[company].institution_hierarchy",
+          "source_evidence": "一、中国人寿财产保险股份有限公司揭阳\n中心支公司\n",
+          "generated_value": {
+            "level": null,
+            "basis_quote": null,
+            "geographic_level": null,
+            "missing_reason": "地域行政级别未由名称推断。"
+          },
+          "impact": "机构层级过滤会漏检；主体名称仍准确，未造成受罚主体错误。",
+          "suggested_fix": "level保存“中心支公司”，basis_quote用该机构名称连续原文；geographic_level继续null，不能将组织层级和地域行政级别混为一谈。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 5,
+        "behavior_count": 5,
+        "subject_responsibility_penalty_review": "五受罚主体17万/5.5万/1.5万/1万/1万分别准确，2024-05-20与共同文号准确；共同表头文号覆盖全表，不属于含糊继承机构独立文号。四个人以unknown+inferred/document_related保存共同案由，没有从部门岗位推出本人给付。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 99,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F008962",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b029\\p1\\F008962_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008962.json",
+      "candidate_sha256": "93f487568c973787dcb4b10bffa1f61a34fb19ce420a2911381ac69ff3bd8501",
+      "severity": "无问题",
+      "issues": [],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 1,
+        "subject_responsibility_penalty_review": "单一阜阳中心支公司受罚，刘俊仅主要负责人未造个人案；委托无资质机构销售行为、21万元及2023-07-13正确；未补具体受托机构或渠道，官方标签explicit合理。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 16,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    },
+    {
+      "file_id": "F003791",
+      "candidate_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b003\\p1\\F003791_r0.json",
+      "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F003791.json",
+      "candidate_sha256": "9c68b622f951043ce65c0f1f091bffca4f5d7a3ce1de494d6825827a3e981889",
+      "severity": "中等",
+      "issues": [
+        {
+          "severity": "中等",
+          "title": "账面费用类别因子错装避税目的和付款机制",
+          "field": "behaviors[false_expense].factor_values[FD-F02]",
+          "source_evidence": "工支付的业务手续费,为了避免支付个人所得税,你中心支公司要求员工提供汽车修理费、办公用品、差旅费、通讯费、燃油费等发票,通过报销业务费用的方式支付手续费。由于此类营业费用均没有实际发\n生,属于虚列营业费用套取现金支付手续费。\n",
+          "generated_value": "避免支付个人所得税，以未实际发生费用报销支付手续费",
+          "impact": "FD-F02目录含义是账面费用类别；此值主要是目的和方式，明确汽车修理/办公/差旅/通讯/燃油类别未以该因子保存，导致费用类别检索失效或噪声。事实摘要与5625元、200元、30000元罚款分离正确。",
+          "suggested_fix": "FD-F02记录汽车修理费、办公用品、差旅费、通讯费、燃油费；FD-F01记录费用未实际发生，FD-F03记录支付员工业务手续费。避税目的留摘要或有明确意义的补充字段，不贴保险营销避债避税标签。"
+        }
+      ],
+      "checks": {
+        "read_full_text": true,
+        "read_all_cases_behaviors": true,
+        "case_count": 1,
+        "behavior_count": 2,
+        "subject_responsibility_penalty_review": "公司独立两项虚列费用5625元和假发票200元，合计5825元未当罚款；罚款3万元、2008-04-21正确。2007-12-06至08检查与7/8月凭证分开；整改和历史裁量表述保留，未将避免个税当客户保险避税宣传。",
+        "amount_date_currency": "逐主体核对金额换算、警告/责令改正/罚款分离及决定日期；原文未明示人民币，currency=null正确。",
+        "quotes_checked": 39,
+        "noncontinuous_quote_fields": [],
+        "taxonomy": "所用标签均在官方27类；未因宽召回本身判错。推测标签及unknown个人关联均具inferred、相应scope及limitations。",
+        "scene_material": "行政处罚/ST6或有明确培训内容的ST5证据保守；source_context_only未扩大适用，无客户话术/原件虚构。",
+        "factor_retrieval": "逐因子对照目录和事实；只记录issues列出的已证实错位/遗漏，不要求强凑未评估因子。"
+      },
+      "not_flagged_notes": [
+        "法律value若只写相关条款，原文quote仍完整；本次未把这种显示简略视为事实错引。",
+        "risk_mechanism=null不表示没有机制，未补事实；详实原文已有summary/action/因子可保留核心检索事实。"
+      ]
+    }
+  ]
+}

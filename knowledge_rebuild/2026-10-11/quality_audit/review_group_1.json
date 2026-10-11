@@ -1,0 +1,102 @@
+[
+  {
+    "file_id": "F006083",
+    "batch": "b030",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b030\\p1\\F006083_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F006083.json",
+    "cases": 1,
+    "behaviors": 2,
+    "sha256": "63bdae975e05bb8b5828cc9c6f46f8e0268d7bf8d04e61c53aa2fcd955c0e4fa"
+  },
+  {
+    "file_id": "F008654",
+    "batch": "b021",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b021\\p1\\F008654_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008654.json",
+    "cases": 4,
+    "behaviors": 8,
+    "sha256": "7e48713760a1714a60ed09954f7fc8ae59db142ad5ea07c8009c19a94be9f6e4"
+  },
+  {
+    "file_id": "F008730",
+    "batch": "b030",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b030\\p1\\F008730_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008730.json",
+    "cases": 1,
+    "behaviors": 1,
+    "sha256": "4a3d9f5e5900891b4eac210d027e96285963a6dae1ec7abd5f6c7ae26f9ea6e0"
+  },
+  {
+    "file_id": "F004829",
+    "batch": "b021",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b021\\p1\\F004829_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F004829.json",
+    "cases": 3,
+    "behaviors": 3,
+    "sha256": "35807d2a115714d6b88a6b40b84a8fbe673029c422369f56694471a06fdeede9"
+  },
+  {
+    "file_id": "F008816",
+    "batch": "b017",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b017\\p1\\F008816_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008816.json",
+    "cases": 1,
+    "behaviors": 4,
+    "sha256": "0f9163722042e893823f90d4097bf46602f72650bd49ab92dcd7e5fe1d40bf19"
+  },
+  {
+    "file_id": "F003209",
+    "batch": "b004",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b004\\p1\\F003209_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F003209.json",
+    "cases": 1,
+    "behaviors": 2,
+    "sha256": "688981439182e040de9d01675925c0dcf75d004097251c92dd96bacdd817f689"
+  },
+  {
+    "file_id": "F005369",
+    "batch": "b003",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b003\\p1\\F005369_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F005369.json",
+    "cases": 1,
+    "behaviors": 1,
+    "sha256": "c85320048f27d88d5aa505971f25200569ef2d01e8a24936bd9a25553a78d577"
+  },
+  {
+    "file_id": "F006390",
+    "batch": "b022",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b022\\p1\\F006390_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F006390.json",
+    "cases": 5,
+    "behaviors": 5,
+    "sha256": "6c113f6895c77072075d647e76dad7ee4ac15d533a02f6e1a0aa4b6933a6e1c7"
+  },
+  {
+    "file_id": "F008962",
+    "batch": "b029",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b029\\p1\\F008962_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F008962.json",
+    "cases": 1,
+    "behaviors": 1,
+    "sha256": "93f487568c973787dcb4b10bffa1f61a34fb19ce420a2911381ac69ff3bd8501"
+  },
+  {
+    "file_id": "F003791",
+    "batch": "b003",
+    "part": "p1",
+    "path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量运行_v2_20261011\\authored\\b003\\p1\\F003791_r0.json",
+    "task_path": "C:\\Users\\11051\\Documents\\Codex\\2026-10-09\\c-users-11051-desktop-agent-ai\\outputs\\FinRisk_剩余全量准备_20261011\\tasks\\F003791.json",
+    "cases": 1,
+    "behaviors": 2,
+    "sha256": "9c68b622f951043ce65c0f1f091bffca4f5d7a3ce1de494d6825827a3e981889"
+  }
+]

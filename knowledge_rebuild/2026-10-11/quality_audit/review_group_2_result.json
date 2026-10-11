@@ -1,0 +1,92 @@
+{
+  "group": 2,
+  "review_type": "独立只读语义抽检",
+  "scope": "10份任务full_text与最新候选cases/behaviors；未读生成者记录或盲验，未生成修订、写账本或使用网络/API。",
+  "grading": "按每份最高问题等级：重大=主体/金额等核心事实错误；中等=影响结构化检索的行为、依据、场景、因子或字段错误/缺失；轻微=措辞冗余；无问题=未发现实质问题。",
+  "summary": {"files": 10, "重大": 0, "中等": 9, "轻微": 0, "无问题": 1},
+  "items": [
+    {
+      "file_id": "F007000", "severity": "中等",
+      "issues": [
+        {"severity":"中等","field":"cases[liao].legal_refs[0].value","evidence":"原文《人身保险基本服务规定》第三十一条；候选value为《中华人民共和国保险法》相关条款见原文，quote却为正确原文。","impact":"法规名称错误，按法名检索会错召回/漏召回。","fix":"按原文明示名称和第三十一条保存，不用保险法模板。"},
+        {"severity":"中等","field":"behaviors[late_callback].factor_values[FD-P01].value","evidence":"原文负有直接责任和管理责任；候选因子写负有责任，具体类型未载。","impact":"责任类型筛选丢失且与原文及summary矛盾。","fix":"原样保留直接责任和管理责任，仍不推亲自实施。"}
+      ],
+      "checks":"廖秦责任绑定、警告+2000元、2024-02-27、回访违规explicit及ST5依据正确；未推电话渠道，币种未载留空。"
+    },
+    {
+      "file_id":"F008676","severity":"无问题","issues":[],
+      "checks":"完整核对北京红枫鑫保险代理有限公司、京金罚决字〔2023〕4号、2023-08-28、拒绝或妨碍监督检查、吊销业务许可证；单一行为覆盖，其他为合理官方兜底标签，保险法第一百七十条准确；实际场景unknown、处罚载体ST6有限适用合理；无金额或币种补造。"
+    },
+    {
+      "file_id":"F007392","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[company].legal_refs[0].value","evidence":"原文明示保险法第八十六条、第一百三十五条和第一百七十条；value仅写相关条款见原文。","impact":"条款级结构化检索缺失，虽quote保留原文。","fix":"逐条或完整明确保存这三条。"},
+        {"severity":"中等","field":"cases[company].institution_hierarchy","evidence":"主体名称明确为陕西分公司；level、basis_quote均null，missing_reason为地域行政级别未由名称推断。","impact":"把组织层级与地域行政级别混为一谈，分公司过滤失效。","fix":"组织层级按原文分公司保存并附名称引文；geographic_level继续null。"}
+      ],
+      "checks":"机构30万元、2024-01-05准确；虚假财务报表和违规条款费率分两行为，其他/未按规定使用费率条款合理，无虚构资金去向。"
+    },
+    {
+      "file_id":"F007430","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[qu].legal_refs","evidence":"原文明示保险法第八十六条、第一百七十一条及财产保险公司保险条款和保险费率管理办法第二十三条；value仅写保险法相关条款见原文。","impact":"第二部法规名称和全部条号未进入结构化value，法规检索不足。","fix":"明确保存两部法规及对应条号，保留原引文。"}
+      ],
+      "checks":"屈晓临仅负责任、两事项拆分、警告+8万元、2024-01-03正确；虚列费用套取资金为inferred且明确套取未明并有限制，符合宽召回，不判过度标签。"
+    },
+    {
+      "file_id":"F006907","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[chen].legal_refs[0].value","evidence":"原文明示保险法第一百七十二条；value仅写相关条款见原文。","impact":"条号结构化检索丢失。","fix":"保存保险法第一百七十二条。"}
+      ],
+      "checks":"陈峭作为原文直接给予行为主体、合同外利益explicit、警告+1000元、2024-03-26正确；未把保险机构增列受罚主体，未补返佣形式或币种。"
+    },
+    {
+      "file_id":"F004985","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[company].institution_hierarchy","evidence":"原文中国人民财产保险股份有限公司成都市分公司；level和basis_quote均null，missing_reason为地域行政级别未由名称推断。","impact":"组织分公司层级未保留，影响机构筛选。","fix":"保存原文明示分公司层级与名称引文，继续不推地域行政级别。"},
+        {"severity":"轻微","field":"cases[*].case_summary","evidence":"公司和刘亚summary完全相同，均为业务事项未如实记录与未严执行内控，公司24万刘5万均警告人民币。","impact":"摘要混入其他主体处罚，阅读成本高；结构化处罚仍正确，未构成错绑。","fix":"每案摘要只写本受罚主体；个人摘要明确同文关联、两事项责任未分。"}
+      ],
+      "checks":"公司77号24万元、刘亚80号5万元分别绑定，人民币CNY有明文依据；决定日未载留空；机构两行为覆盖，个人unknown/inferred/document_related及限制合理，不推副总经理亲自实施。"
+    },
+    {
+      "file_id":"F005504","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[xue].legal_refs","evidence":"原文明示《中华人民共和国保险法》第一百七十一条；候选legal_refs=[]。","impact":"明确处罚依据完全未进入案件结构字段。","fix":"补存这部法规和条号及原文引文。"},
+        {"severity":"中等","field":"cases[xue].related_party_names","evidence":"原文对泰康人寿许昌中支给予投保人保险合同约定以外的保险费回扣事项负有责任；related_party_names=[]。","impact":"明确个人所负责任的机构无法通过关系字段检索。","fix":"按原文保存泰康人寿许昌中支，不擅自扩展全称。"},
+        {"severity":"轻微","field":"cases[xue].case_summary; behaviors[responsibility].summary/regulatory_finding","evidence":"case_summary写警告1万；行为摘要把泰康人寿许昌中支缩为泰康寿许昌中支。","impact":"措辞不清及无依据简称，结构化处罚正确。","fix":"写警告并罚款1万元，机构简称沿用原文。"}
+      ],
+      "checks":"薛凯负责而非亲自给予、警告+1万元、2024-09-20正确；回扣返佣和合同外利益均explicit合理；银保职务未被推成实际渠道。"
+    },
+    {
+      "file_id":"F008571","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[*].legal_refs[*].value","evidence":"原文明示保险法第一百七十条、第一百七十一条和保险代理人监管规定（银保监会令2020年第11号）第一百零九条、第一百一十条；五案value均为历史条款见原文。","impact":"法规名称和条号均未进入结构化value，无法据此准确筛选。","fix":"在文书共同依据范围内完整保存原文明示法规和条号，不据此推分项责任。"},
+        {"severity":"中等","field":"cases[company].institution_hierarchy","evidence":"主体恒大人寿保险有限公司重庆分公司云阳支公司；level和basis_quote均null，理由仍为地域行政级别未由名称推断。","impact":"原文明示支公司组织层级缺失。","fix":"保留支公司及原文组织链名称证据，地域行政级别留空。"},
+        {"severity":"轻微","field":"cases[*].unknowns[1]","evidence":"候选写告知书未明缺项、执业登记不等明示无销售资质；全文只有代理人管理不到位和编制虚假业务资料，没有告知书或执业登记事实。","impact":"无关模板疑点污染阅读，虽未断言缺项或无资质。","fix":"只保留本份原文实际缺口，去掉无关模板措辞。"}
+      ],
+      "checks":"五主体无漏：机构21万元、蒋刚警告2次+4万元、刘全英/米绪红/岑仪华各警告+5000元，2023-09-20正确且处罚顺序未错绑；机构两行为及个人文书关联各两条覆盖；个人unknown标签均inferred/document_related并有limitations，不按岗位推直接实施。"
+    },
+    {
+      "file_id":"F006219","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[zhang].legal_refs","evidence":"原文明示保险法第八十六条、第一百七十一条，农业保险承保理赔管理办法第十条、第十三条、第三十一条；legal_refs=[]。","impact":"明确法规依据整体遗漏，影响法规及农险专业检索。","fix":"保存两部法规和所有明示条号及引文。"},
+        {"severity":"中等","field":"behaviors[related].product_type/product_quote","evidence":"原文明示农业保险承保验标资料不真实；养殖险核赔不到位，未能如实记载出险标的数量；product_type和product_quote均null。","impact":"明确险种未结构化，农险/养殖险筛选漏召回。","fix":"按原文保存农业保险与养殖险并附引文；不新增赔付机制或责任类型。"},
+        {"severity":"中等","field":"cases[zhang].related_party_names","evidence":"任职中国太平洋财产保险股份有限公司阳东支公司农险专员的名称明确；related_party_names=[]。","impact":"个人所属机构关系字段缺失。","fix":"存原文所属机构名称，保持个人具体实施未知。"}
+      ],
+      "checks":"张志聪警告+合计2万元、2024-06-07正确；两案由都在复合关联中明确保留且责任未分配，按prompt对个人复合责任例外，不判漏行为；unknown/inferred/document_related及限制符合政策；其他兜底合理，不强贴客户信息不真实。"
+    },
+    {
+      "file_id":"F008832","severity":"中等",
+      "issues":[
+        {"severity":"中等","field":"cases[ye].legal_refs[0].value","evidence":"原文明示保险法第一百七十一条；value仅写保险法相关条款见原文。","impact":"条号结构化检索缺失。","fix":"保存保险法第一百七十一条及原引文。"}
+      ],
+      "checks":"叶志发仅对财务数据不真实负责任，警告+3万元、2023-08-03正确；未推虚列费用或套取用途，其他标签合理；责任类型确实未明，FD-P01写仅负责任合理。"
+    }
+  ],
+  "cross_checks": {
+    "official_labels": "27类官方词表已读取；本组所有标签均为官方原名。",
+    "wide_recall": "F007430虚列费用的套取资金候选用inferred并附限制，合理；多主体个人unknown标签均遵守inferred/document_related规则。",
+    "money_dates": "逐份复核主体金额与日期，无重大错绑；F004985明示人民币已保存CNY，其余未明示币种留null合理。",
+    "quotes": "已逐份核对引用与原文；发现的法规问题主要是value与quote不一致/信息缺失，不是引文伪造。",
+    "retrieval": "未进行检索实测；影响是结构字段信息缺失的语义判断，不宣称实际召回率变化。"
+  }
+}
